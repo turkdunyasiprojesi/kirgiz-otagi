@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kırgız Otağı (Boz Üy)</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="experience" aria-label="Kırgız Otağı tanıtımı">
+      <video
+        id="introVideo"
+        class="intro-video"
+        src="giris.mp4"
+        muted
+        playsinline
+        preload="auto"
+      ></video>
+
+      <audio id="backgroundMusic" src="sesler/fon.mpeg" preload="auto" loop></audio>
+      <audio id="introSound" src="sesler/giris.mpeg" preload="auto"></audio>
+      <audio id="sectionSound" preload="auto"></audio>
+
+      <div class="video-vignette" aria-hidden="true"></div>
+
+      <div id="startScreen" class="start-screen">
+        <button id="startButton" class="start-button" type="button" aria-label="Başlat">
+          <span class="start-play-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <button id="soundToggle" class="sound-toggle glass-control" type="button" aria-label="Sesi aç veya kapat">
+        <span class="sound-on">Ses Aç</span>
+        <span class="sound-off">Ses Kapat</span>
+      </button>
+
+      <button id="replayButton" class="replay-button glass-control" type="button">
+        Tekrar Oynat
+      </button>
+
+      <section id="infoOverlay" class="info-overlay" aria-labelledby="pageTitle">
+        <div class="motif-layer" aria-hidden="true">
+          <span class="side-motif motif-left-top"></span>
+          <span class="side-motif motif-left-bottom"></span>
+          <span class="side-motif motif-right-top"></span>
+          <span class="side-motif motif-right-bottom"></span>
+        </div>
+
+        <div class="title-panel liquid-card">
+          <span class="ornament" aria-hidden="true"></span>
+          <div>
+            <h1 id="pageTitle">KIRGIZ OTAĞI (BOZ ÜY)</h1>
+            <p>
+              Kırgız otağı, yüzyıllardır göçebe Kırgız halkının evi ve yaşam alanıdır.
+              Doğayla uyumlu, kolay taşınabilir, dayanıklı ve misafirperverliği, birlik ve aile anlayışını
+              simgeleyen geleneksel bir yaşam kültürüdür.
+            </p>
+          </div>
+          <span class="ornament" aria-hidden="true"></span>
+        </div>
+
+        <div class="feature-map" aria-label="Otağın bölümleri">
+          <article class="glass-card info-card left top" role="button" tabindex="0" data-media-index="1">
+            <span class="icon-mark sun-mark" aria-hidden="true"></span>
+            <div>
+              <h2>TÜNDÜK</h2>
+              <p>
+                Otağın tepesindeki daire şeklindeki açıklıktır. Güneşin ve gökyüzünün sembolüdür.
+                Aile birliği ve yaşamın kaynağını temsil eder.
+              </p>
+            </div>
+            <span class="click-cue" aria-hidden="true"></span>
+          </article>
+
+          <article class="glass-card info-card left middle" role="button" tabindex="0" data-media-index="2">
+            <span class="icon-mark lattice-mark" aria-hidden="true"></span>
+            <div>
+              <h2>KEREGE</h2>
+              <p>
+                Otağın duvarını oluşturan kafes şeklindeki ahşap yapıdır. Katlanabilir özelliktedir.
+              </p>
+            </div>
+            <span class="click-cue" aria-hidden="true"></span>
+          </article>
+
+          <article class="glass-card info-card left bottom" role="button" tabindex="0" data-media-index="3">
+            <span class="icon-mark door-mark" aria-hidden="true"></span>
+            <div>
+              <h2>ESİK (KAPI)</h2>
+              <p>
+                Otağın giriş kapısıdır. Genellikle güneye dönük yerleştirilir. Güneşi, bereketi ve aydınlığı simgeler.
+              </p>
+            </div>
+            <span class="click-cue" aria-hidden="true"></span>
+          </article>
+
+          <article class="glass-card info-card right top" role="button" tabindex="0" data-media-index="4">
+            <span class="icon-mark ribs-mark" aria-hidden="true"></span>
+            <div>
+              <h2>UUUK <span>(KEREGE ÜSTÜ)</span></h2>
+              <p>
+                Tündükten çevreye doğru uzanan ağaç direklerdir. Otağın iskeletini oluşturur.
+              </p>
+            </div>
+            <span class="click-cue" aria-hidden="true"></span>
+          </article>
+
+          <article class="glass-card info-card right middle" role="button" tabindex="0" data-media-index="5">
+            <span class="icon-mark weave-mark" aria-hidden="true"></span>
+            <div>
+              <h2>KIYIZ <span>(KECE)</span></h2>
+              <p>
+                Keçi yününden yapılan keçedir. Otağın üzerini örter, yazın serin, kışın sıcak tutar.
+                Su geçirmez özelliktedir.
+              </p>
+            </div>
+            <span class="click-cue" aria-hidden="true"></span>
+          </article>
+
+          <article class="glass-card info-card right bottom" role="button" tabindex="0" data-media-index="6">
+            <span class="icon-mark order-mark" aria-hidden="true"></span>
+            <div>
+              <h2>İÇ DÜZEN <span>(ÇADE)</span></h2>
+              <p>
+                Otağın içi temiz ve düzenli tutulur. Orta bölüm aile toplantıları ve misafirler için ayrılır.
+                Eşyalar belirli bir düzene göre yerleştirilir.
+              </p>
+            </div>
+            <span class="click-cue" aria-hidden="true"></span>
+          </article>
+        </div>
+
+        <section class="properties liquid-card" aria-labelledby="propertiesTitle">
+          <h2 id="propertiesTitle">KIRGIZ OTAĞININ ÖZELLİKLERİ</h2>
+          <div class="property-grid">
+            <article class="property-pill">
+              <span class="property-icon mountain" aria-hidden="true"></span>
+              <span>Doğal malzemelerden yapılmıştır<br />(ahşap, keçe, yün ip).</span>
+            </article>
+            <article class="property-pill">
+              <span class="property-icon frame" aria-hidden="true"></span>
+              <span>Kolay kurulur,<br />sökülür ve taşınır.</span>
+            </article>
+            <article class="property-pill">
+              <span class="property-icon climate" aria-hidden="true"></span>
+              <span>Yazın serin,<br />kışın sıcak tutar.</span>
+            </article>
+            <article class="property-pill">
+              <span class="property-icon wind" aria-hidden="true"></span>
+              <span>Rüzgara ve dış hava<br />koşullarına dayanıklıdır.</span>
+            </article>
+            <article class="property-pill">
+              <span class="property-icon family" aria-hidden="true"></span>
+              <span>Aile birliğini ve misafirperverliği<br />sembolize eder.</span>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-detail" aria-live="polite">
+          <div class="section-copy">
+            <h2 id="detailTitle">TÜNDÜK</h2>
+            <p id="detailDescription">
+              Otağın tepesindeki daire şeklindeki açıklıktır. Güneşin ve gökyüzünün sembolüdür.
+              Aile birliği ve yaşamın kaynağını temsil eder.
+            </p>
+          </div>
+
+          <button id="backToMenu" class="back-to-menu" type="button" aria-label="Başa dön">
+            <span>Başa Dön</span>
+            <span class="back-circle" aria-hidden="true"></span>
+          </button>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
