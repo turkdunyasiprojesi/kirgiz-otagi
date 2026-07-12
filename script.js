@@ -1,4 +1,5 @@
 const video = document.getElementById("introVideo");
+const backgroundLayer = document.getElementById("backgroundLayer");
 const overlay = document.getElementById("infoOverlay");
 const startButton = document.getElementById("startButton");
 const soundToggle = document.getElementById("soundToggle");
@@ -12,6 +13,8 @@ const sectionSound = document.getElementById("sectionSound");
 const glassElements = document.querySelectorAll(".glass-card");
 
 const INTRO_VIDEO = "giris.mp4";
+const INTRO_START_BG = "bgs/ilk.jpg";
+const INTRO_END_BG = "bgs/son.jpg";
 const audioElements = [backgroundMusic, introSound, sectionSound];
 const sectionDetails = {
   1: {
@@ -52,6 +55,19 @@ let introSoundPlayed = false;
 let appStarted = false;
 let isReversePlaying = false;
 let currentSectionIndex = null;
+
+function setBackgroundImage(src) {
+  backgroundLayer.style.backgroundImage = `url("${src}")`;
+}
+
+function revealVideo() {
+  video.classList.remove("is-background-revealed");
+}
+
+function showBackgroundImage(src) {
+  setBackgroundImage(src);
+  video.classList.add("is-background-revealed");
+}
 
 function showOverlay() {
   if (overlayShown) return;
@@ -122,6 +138,7 @@ function showNearVideoEnd() {
 }
 
 function playVideo() {
+  revealVideo();
   const playAttempt = video.play();
 
   if (playAttempt && typeof playAttempt.catch === "function") {
@@ -169,6 +186,7 @@ function finishReverseToMenu() {
   isReversePlaying = false;
   backToMenu.disabled = false;
   currentSectionIndex = null;
+  showBackgroundImage(INTRO_END_BG);
   document.body.classList.remove("detail-mode", "section-ended", "reverse-mode");
   showOverlay();
   playMedia(backgroundMusic);
@@ -208,6 +226,7 @@ function replayIntro() {
     video.load();
   }
 
+  setBackgroundImage(INTRO_START_BG);
   video.currentTime = 0;
   hideOverlay();
   playStartupAudio();
@@ -229,11 +248,13 @@ video.addEventListener("ended", () => {
 
   if (sectionMode) {
     backToMenu.disabled = false;
+    showBackgroundImage(`bgs/bg${currentSectionIndex}.jpg`);
     document.body.classList.add("section-ended");
     return;
   }
 
   if (!sectionMode) {
+    showBackgroundImage(INTRO_END_BG);
     showOverlay();
   }
 });
@@ -267,6 +288,7 @@ startButton.addEventListener("click", () => {
 
   appStarted = true;
   document.body.classList.add("app-started");
+  setBackgroundImage(INTRO_START_BG);
   playStartupAudio();
   playVideo();
   clearTimeout(fallbackTimer);
@@ -295,6 +317,7 @@ glassElements.forEach((element) => {
   });
 });
 
+setBackgroundImage(INTRO_START_BG);
 applyAudioState();
 window.addEventListener("pointerdown", unlockAudioOnce);
 window.addEventListener("keydown", unlockAudioOnce);

@@ -40,6 +40,17 @@ button {
   overflow: hidden;
 }
 
+.background-layer {
+  position: fixed;
+  inset: 0;
+  z-index: -4;
+  background-image: url("bgs/ilk.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: scale(1.01);
+}
+
 .intro-video {
   position: fixed;
   inset: 0;
@@ -48,6 +59,13 @@ button {
   height: 100%;
   object-fit: cover;
   background: #110805;
+  opacity: 1;
+  transition: opacity 420ms ease;
+}
+
+body:not(.app-started) .intro-video,
+.intro-video.is-background-revealed {
+  opacity: 0;
 }
 
 .video-vignette {
